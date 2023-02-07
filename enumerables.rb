@@ -13,12 +13,14 @@ end
 # with the names of each spicy food
 def get_names(spicy_foods)
   # your code here
+  spicy_foods.map { |food| food[:name] }
 end
 
 # given an array of spicy foods, **return an array of hashes** 
 # where the heat level of the food is greater than 5
 def spiciest_foods(spicy_foods)
   # your code here
+  spicy_foods.select { |food| food[:heat_level] > 5 }
 end
 
 # given an array of spicy foods, **output to the terminal**
@@ -28,6 +30,9 @@ end
 # "hello" * 3 == "hellohellohello"
 def print_spicy_foods(spicy_foods)
   # your code here
+  spicy_foods.each do |spicy_food|
+    puts "#{spicy_food[:name]} (#{spicy_food[:cuisine]}) | Heat Level: #{"🌶" * spicy_food[:heat_level]}"
+  end
 end
 
 # given an array of spicy foods and a string representing a cuisine, **return a single hash**  
